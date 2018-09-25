@@ -62,7 +62,7 @@ int main()
 	unsigned char whitePixel[] = {255,255,255};
 
 	texture whiteTexture = makeTexture(1, 1, 3, whitePixel);
-	texture testTexture = loadTexture("download.jpg");
+	texture testTexture = loadTexture("download.png");
 	texture newTex = makeTexture(1, 1, 3, whitePixel);
 
 	glm::mat4 cam_proj = glm::perspective(glm::radians(45.f), 800.0f / 600.0f,  0.1f, 1000.0f);
@@ -80,8 +80,8 @@ int main()
 		setUniform(texShad, 1, cam_view);
 		setUniform(texShad, 2, triangle_model);
 
-		setUniform(texShad, 3, whiteTexture, 0);
-		//setUniform(texShad, 4, lightDir);
+		setUniform(texShad, 3, testTexture, 0);
+		setUniform(texShad, 4, lightDir);
 		/*r = rand() % 255;
 		g = rand() % 255;
 		b = rand() % 255;
